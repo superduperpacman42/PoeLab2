@@ -14,13 +14,13 @@ while(True):
         result = str(result)[2:-5]
         point = result.split(",")
         point = list(map(lambda x:float(x), point))
-        if point[0] == -85:
+        if point[0] == 0:
             begin = True
         if begin:
             datapoint = str(point).replace("[","").replace("]","")
             print(datapoint)
             data = data + [datapoint]
-            if point[0] == 84:
+            if point[0] >= 170*170:
                 break
     except ValueError:
         print ("You are a failure")
